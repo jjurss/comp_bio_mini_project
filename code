@@ -1,1 +1,5 @@
-import OS
+import os
+os.mkdir("OptionA_Jared_Jurss")
+os.chdir("OptionA_Jared_Jurss")
+open("OptionA.log", "w")
+os.system("wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR818/SRR8185310/SRR8185310.sra")
