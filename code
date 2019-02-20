@@ -7,5 +7,5 @@ reads_file = "SRR8185310.sra"
 os.system("fastq-dump -I " + reads_file)
 fastq_file = "SRR8185310_1.fastq"
 SPAdes_command = "SPAdes -k 55,77,99,127 -t 2 --only-assembler -s " + fastq_file + " -o OptionA_Jared_Jurss/SRR8185310_Assembly/"
-log.writeline(SPAdes_command)
+log.write(SPAdes_command)
 os.system(SPAdes_command)
