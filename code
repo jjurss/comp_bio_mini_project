@@ -1,4 +1,5 @@
 import os
+from Bio import SeqIO
 os.mkdir("OptionA_Jared_Jurss")
 os.chdir("OptionA_Jared_Jurss")
 log = open("OptionA.log", "w")
