@@ -13,10 +13,12 @@ os.system(SPAdes_command)
 contig_handle = "OptionA_Jared_Jurss\\SRR8185310_Assembly\\contigs.fasta"
 contigs = SeqIO.parse(contig_handle)
 significant_contigs = []
+prokka_file = open("Contigs.fa","w")
 count = 0
 for record in contigs:
     if len(record.seq) > 1000:
         significant_contigs.append(record)
+        prokka_file.write(record)
         count += 1
 log.write("There are " + count + " contigs > 1000bp in the assembly.")
 assembly_length = 0
