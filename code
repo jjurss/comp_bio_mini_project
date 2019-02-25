@@ -25,3 +25,10 @@ assembly_length = 0
 for contig in significant_contigs:
     assembly_length += len(contig)
 log.write("There are " + assembly_length + " bp in the assembly.")
+prokka_commmand = "prokka --outdir prokka_output --prefix E_coli_k12 --genus Escherichia --cpus 2 --mincontiglen 1000 --quiet contigs.fasta"
+log.write(prokka_commmand)
+os.system(prokka_commmand)
+prokka_results = open("OptionA_Jared_Jurss\\prokka_output\\E_coli_k12.txt")
+for line in prokka_results.readlines():
+    log.write(line)
+##add the code for discrepencies in the number of CDS and tRNAs (7)
