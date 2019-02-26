@@ -15,5 +15,6 @@ The Tuxedo Suite: BowTie2 http://bowtie-bio.sourceforge.net/index.shtml
 ## Running The Script
 The script will automatically download all the necessary data files for you, no need to download them yourself.  The files are available to view in the Sample_Data folder of this GitHub.  
 To run the script simply download the python file and run it in your Mac or Linux terminal.    
-example: "python3 OptionA_Jared_Jurss_Code.py"  
+example:  
+<b>"python3 OptionA_Jared_Jurss_Code.py"<b>  
 The script will create a directory called OptionA_Jared_Jurss in whatever directory it is run in.  Inside this directory will be a file called OptionA.log, this is a text file which will log the commands used to run SPAdes and Prokka in the terminal.  It will also output some of the result statistics from these programs.  Inside OptionA_Jared_Jurss a directory called SRR8185310_Assembly will be created, this has all the output files from SPAdes.  Inside this directory will be another directory called prokka_results which will contain all the output files from Prokka.     
