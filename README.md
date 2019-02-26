@@ -4,13 +4,13 @@ This is a python scrpit which will assemble and annotate the genome reads from a
 ## Required Spftware:
 This script will be using wrappers to call specific bioinformatics tools that must be downloaded and installed before the script can function properly.
 
-fastq-dump (part of sra tools) https://github.com/ncbi/sra-tools
-SPAdes http://cab.spbu.ru/software/spades/
-SAM Tools https://github.com/samtools/samtools
-Prokka https://github.com/tseemann/prokka
-The Tuxedo Suite: BowTie2 http://bowtie-bio.sourceforge.net/index.shtml
-                  TopHat2 http://ccb.jhu.edu/software/tophat/index.shtml
-                  Cufflinks http://cole-trapnell-lab.github.io/cufflinks/
+fastq-dump (part of sra tools) https://github.com/ncbi/sra-tools \n
+SPAdes http://cab.spbu.ru/software/spades/ \n
+SAM Tools https://github.com/samtools/samtools \n
+Prokka https://github.com/tseemann/prokka \n
+The Tuxedo Suite: BowTie2 http://bowtie-bio.sourceforge.net/index.shtml \n
+                  TopHat2 http://ccb.jhu.edu/software/tophat/index.shtml \n
+                  Cufflinks http://cole-trapnell-lab.github.io/cufflinks/ \n
 
 ## Running The Script
 The script will automatically download all the necessary data files for you, no need to download them yourself.  The files are available to view in the Sample_Data folder of this GitHub.
