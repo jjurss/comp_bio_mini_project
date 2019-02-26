@@ -47,4 +47,14 @@ os.system("fastq-dump -I --split-files SRR1411276.sra")
 os.system("tophat2 -o SRR1411276_output --no-novel-juncs NC_000913 SRR1411276_1.fastq")
 os.system("cd SRR1411276_output")
 os.system("cufflinks accepted_hits.bam")
-##add code for cufflinks output parse and creation of CSV file
+data = open("transcripts.gtf").readlines()
+output = open("OpionA_Jared_Jurss/Option1.fpkm", "w")
+for line in data:
+    line_data = line.split("\t")
+    output.write(line_data[0] + ", " + line_data[3] + ", " + line_data[4] + ", " + line_data[6] + ", ")
+    attributes = line_data[8].split("; ")
+    for attribute in attributes:
+        if "FPKM" in attribute:
+            output.write(attribute + "\n")
+log.close()
+output.close()
