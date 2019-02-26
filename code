@@ -27,7 +27,7 @@ log.write("There are " + str(assembly_length) + " bp in the assembly. \n")
 prokka_commmand = "prokka --outdir prokka_results --prefix Ecoli --genus Escherichia --mincontiglen 1000 --quiet contigs.fasta"
 log.write(prokka_commmand)
 os.system(prokka_commmand)
-prokka_results = open("OptionA_Jared_Jurss/SRR8185310_Assembly/prokka_results/--E_coli_k12.txt").readlines()
+prokka_results = open("OptionA_Jared_Jurss/SRR8185310_Assembly/prokka_results/--Ecoli.txt").readlines()
 for line in prokka_results:
     log.write(line)
 CDS = int(prokka_results[4].strip().split(" ")[1])
