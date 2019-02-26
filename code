@@ -32,7 +32,7 @@ for line in prokka_results:
 CDS = int(prokka_results[4])
 tRNA = int(prokka_results[5])
 if CDS > 4140:
-    log.write("Prokka found an additional " + str(CDS - 4140)) + " CDS")
+    log.write("Prokka found an additional " + str(CDS - 4140) + " CDS")
 else:
     log.write("Prokka found " + str(4140 - CDS) + " fewer CDS")
 if tRNA > 89:
