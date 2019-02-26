@@ -9,9 +9,9 @@ SPAdes http://cab.spbu.ru/software/spades/
 SAM Tools https://github.com/samtools/samtools  
 Prokka https://github.com/tseemann/prokka  
 The Tuxedo Suite:  
-  BowTie2 http://bowtie-bio.sourceforge.net/index.shtml  
-  TopHat2 http://ccb.jhu.edu/software/tophat/index.shtml  
-  Cufflinks http://cole-trapnell-lab.github.io/cufflinks  
+* BowTie2 http://bowtie-bio.sourceforge.net/index.shtml  
+* TopHat2 http://ccb.jhu.edu/software/tophat/index.shtml  
+* Cufflinks http://cole-trapnell-lab.github.io/cufflinks  
 
 ## Running The Script
 The script will automatically download all the necessary data files for you, no need to download them yourself.  The files are available to view in the Sample_Data folder of this GitHub.  
