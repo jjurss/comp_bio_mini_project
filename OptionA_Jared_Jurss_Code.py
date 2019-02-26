@@ -47,9 +47,10 @@ os.system("wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/S
 os.system("bowtie2-build NC_000913.fna NC_000913")
 os.system("fastq-dump -I --split-files SRR1411276.sra")
 os.system("tophat2 -o SRR1411276_output --no-novel-juncs -p 2 NC_000913 SRR1411276_1.fastq")
-os.system("cd SRR1411276_output")
-os.system("cufflinks accepted_hits.bam")
-data = open("TopHat_Files/SRR1411276_output/transcripts.gtf").readlines()
+os.chdir("SRR1411276_output")
+os.system("cufflinks -o cufflinks_output -p 2 accepted_hits.bam")
+data = open("cufflinks_output/transcripts.gtf").readlines()
+os.chdir("..")
 os.chdir("..")
 output = open("Option1.fpkm", "w")
 for line in data:
