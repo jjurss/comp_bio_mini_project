@@ -24,3 +24,19 @@ assembly_length = 0
 for contig in significant_contigs:
     assembly_length += len(contig)
 log.write("There are " + str(assembly_length) + " bp in the assembly. \n")
+prokka_commmand = "prokka --outdir prokka_results --prefix Ecoli --genus Escherichia --cpus 2 --mincontiglen 1000 --quiet contigs.fasta"
+log.write(prokka_commmand)
+os.system(prokka_commmand)
+prokka_results = open("OptionA_Jared_Jurss/SRR8185310_Assembly/prokka_results/--E_coli_k12.txt").readlines()
+for line in prokka_results:
+    log.write(line)
+CDS = int(prokka_results[4].strip().split(" ")[1])
+tRNA = int(prokka_results[5].strip().split(" ")[1])
+if CDS > 4140:
+    log.write("Prokka found an additional " + str(CDS - 4140) + " CDS")
+else:
+    log.write("Prokka found " + str(4140 - CDS) + " fewer CDS")
+if tRNA > 89:
+    log.write(" and " + str(tRNA - 89) + " additional tRNA")
+else:
+    log.write(" and " + str(89 - tRNA) + " fewer tRNA")
