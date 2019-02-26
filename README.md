@@ -13,8 +13,13 @@ The Tuxedo Suite:
 * TopHat2 http://ccb.jhu.edu/software/tophat/index.shtml  
 * Cufflinks http://cole-trapnell-lab.github.io/cufflinks  
 
+## Sample Data
+The script will automatically download all the necessary data files for you, no need to download them yourself.  The data files are too large to be uploaded to GitHub.      
+The E. coli k-12 resequencing reads are available at https://www.ncbi.nlm.nih.gov/sra/SRX5005282  
+The E. coli K-12 transcriptome reads can be found at https://www.ncbi.nlm.nih.gov/sra/SRX604287
+And the E. coli K-12 complete annotated genome is available at https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3
+
 ## Running The Script
-The script will automatically download all the necessary data files for you, no need to download them yourself.  The files are available to view in the Sample_Data folder of this GitHub.  
 To run the script simply download the python file and run it in your Mac or Linux terminal.    
 **example:**  
 `python3 OptionA_Jared_Jurss_Code.py`
