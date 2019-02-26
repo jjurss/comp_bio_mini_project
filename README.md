@@ -1,4 +1,4 @@
-# mini_project
+# Computational Biology Mini Project Spring 2019
 This is a python scrpit which will assemble, annotate and map the genome reads from a resequencing project of Escherichia coli K-12 strain. The raw read data can be found at https://www.ncbi.nlm.nih.gov/sra/SRX5005282 however downloading it is not necessary for the script to run.
 
 ## Required Software:
