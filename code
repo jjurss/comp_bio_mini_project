@@ -10,7 +10,7 @@ fastq_file = "SRR8185310.fastq"
 SPAdes_command = "spades -k 55,77,99,127 -t 2 --only-assembler -s " + fastq_file + " -o SRR8185310_Assembly/"
 log.write(SPAdes_command)
 os.system(SPAdes_command)
-contig_handle = "OptionA_Jared_Jurss\\SRR8185310_Assembly\\contigs.fasta"
+contig_handle = "OptionA_Jared_Jurss/SRR8185310_Assembly/contigs.fasta"
 contigs = SeqIO.parse(contig_handle)
 significant_contigs = []
 count = 0
@@ -26,7 +26,16 @@ log.write("There are " + assembly_length + " bp in the assembly.")
 prokka_commmand = "prokka --outdir prokka_output --prefix E_coli_k12 --genus Escherichia --cpus 2 --mincontiglen 1000 --quiet contigs.fasta"
 log.write(prokka_commmand)
 os.system(prokka_commmand)
-prokka_results = open("OptionA_Jared_Jurss\\prokka_output\\E_coli_k12.txt")
-for line in prokka_results.readlines():
+prokka_results = open("OptionA_Jared_Jurss/prokka_output/E_coli_k12.txt").readlines()
+for line in prokka_results:
     log.write(line)
-##add the code for discrepencies in the number of CDS and tRNAs (7)
+CDS = int(prokka_results[4])
+tRNA = int(prokka_results[5])
+if CDS > 4140:
+    log.write("Prokka found an additional " + str(CDS - 4140)) + " CDS")
+else:
+    log.write("Prokka found " + str(4140 - CDS) + " fewer CDS")
+if tRNA > 89:
+    log.write(" and " + str(tRNA - 89) + " additional tRNA")
+else:
+    log.write(" and " + str(89 - tRNA) + " fewer tRNA")
