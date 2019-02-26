@@ -11,7 +11,7 @@ SPAdes_command = "spades -k 55,77,99,127 -t 2 --only-assembler -s " + fastq_file
 log.write(SPAdes_command)
 os.system(SPAdes_command)
 log = open("OptionA.log", "w")
-contig_handle = "OptionA_Jared_Jurss/SRR8185310_Assembly/contigs.fasta"
+contig_handle = "SRR8185310_Assembly/contigs.fasta"
 contigs = SeqIO.parse(contig_handle, "fasta")
 significant_contigs = []
 count = 0
@@ -24,10 +24,10 @@ assembly_length = 0
 for contig in significant_contigs:
     assembly_length += len(contig)
 log.write("There are " + str(assembly_length) + " bp in the assembly. \n")
-prokka_commmand = "prokka --outdir prokka_results --prefix Ecoli --genus Escherichia --mincontiglen 1000 --quiet SRR1815310_Assembly/contigs.fasta"
+prokka_commmand = "prokka --outdir prokka_results --prefix Ecoli --genus Escherichia --mincontiglen 1000 SRR8185310_Assembly/contigs.fasta"
 log.write(prokka_commmand)
 os.system(prokka_commmand)
-prokka_results = open("OptionA_Jared_Jurss/prokka_results/--Ecoli.txt").readlines()
+prokka_results = open("prokka_results/Ecoli.txt").readlines()
 for line in prokka_results:
     log.write(line)
 CDS = int(prokka_results[4].strip().split(" ")[1])
@@ -43,10 +43,10 @@ else:
 os.mkdir("TopHat_files")
 os.chdir("TopHat_files")
 os.system("wget ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.fna")
-os.system("wget ftp://ftp.ncbi.nhl.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR141/SRR1411276/SRR1411276.sra")
+os.system("wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR141/SRR1411276/SRR1411276.sra")
 os.system("bowtie2-build NC_000913.fna NC_000913")
 os.system("fastq-dump -I --split-files SRR1411276.sra")
-os.system("tophat2 -o SRR1411276_output --no-novel-juncs NC_000913 SRR1411276_1.fastq")
+os.system("tophat2 -o SRR1411276_output --no-novel-juncs -p 2 NC_000913 SRR1411276_1.fastq")
 os.system("cd SRR1411276_output")
 os.system("cufflinks accepted_hits.bam")
 data = open("TopHat_Files/SRR1411276_output/transcripts.gtf").readlines()
