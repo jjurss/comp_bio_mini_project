@@ -1,5 +1,5 @@
 # Computational Biology Mini Project Spring 2019
-This is a python scrpit which will assemble, annotate the reads from a resequencing project of Escherichia coli K-12 strain.  The script will also use reads from a sequencing of a transcriptome of E. coli K-12 to map the genes and to quantify their expression.
+This is a python scrpit which will assemble and annotate the reads from a resequencing project of Escherichia coli K-12 strain.  The script will also use reads from a sequencing of the transcriptome of E. coli K-12 to map the genes and to quantify their expression.
 
 ## Required Software:
 This script will be using wrappers to call specific bioinformatics tools that must be downloaded and installed before the script can function properly.
